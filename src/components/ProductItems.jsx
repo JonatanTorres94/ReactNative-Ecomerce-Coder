@@ -2,11 +2,13 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { colors } from '../themes/colors'
 
-const ProductItems = ({ item }) => {
+const ProductItems = ({ item, navigation }) => {
 
-    return (
+    console.log(item)
+
+    return (    
         <View style={styles.container}> 
-            <TouchableOpacity onPress={() => console.log('Function ok')} style={styles.button}  >
+            <TouchableOpacity onPress={() => navigation.navigate('ProductDetail', {product: item})} style={styles.button}  >
                 <Text style={styles.text}> {item.title} </Text>
                 <View style={styles.imageContainer}>
                     <Image
@@ -33,7 +35,9 @@ const styles = StyleSheet.create({
     text: {
         color: 'black',
         fontSize: 20,
-        marginLeft: 20
+        marginLeft: 20,
+        fontFamily: 'Chakra'
+
     },
     button:{
         flexDirection: 'row',

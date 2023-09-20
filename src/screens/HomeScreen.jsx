@@ -2,13 +2,15 @@ import React from "react";
 import Header from "../components/Header";
 import { View } from "react-native";
 import { Categories } from "../components/Categories";
+import { useNavigation } from "@react-navigation/native";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({navigation}) => {
+
 
     return (
         <View>
             <Header/>
-            <Categories category='laptops'/>
+            <Categories navigation={navigation}/>
         </View>
     )
 }

@@ -14,7 +14,7 @@ const Search = ({text, setText}) => {
             <TextInput
                 onChangeText={(value) => setText(value)}
                 value={text}
-                style={styles.input}
+                style={[styles.input, {fontFamily:'Chakra'}]}
                 placeholder='Busca un producto aqui...'
             />
 

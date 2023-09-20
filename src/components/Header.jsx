@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
         marginVertical: '10',
         fontWeight: '600',
         color: colors.major,
-        top: 15
+        top: 15,
+        fontFamily: 'Chakra'
+
     }
 })
 

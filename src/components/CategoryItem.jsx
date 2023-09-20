@@ -3,9 +3,9 @@ import React from 'react'
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 import { colors } from '../themes/colors'
 
-export const CategoryItem = ({item}) =>{
+export const CategoryItem = ({item, navigation}) =>{
     return (
-        <TouchableOpacity onPress={() => console.log('Function ok')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Products', {item})}>
             <Text style={styles.textlist}> {item} </Text>
         </TouchableOpacity>
     )

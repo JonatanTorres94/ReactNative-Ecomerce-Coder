@@ -4,7 +4,7 @@ import { categories } from '../data/categories'
 import { CategoryItem } from './CategoryItem'
 
 
-export const Categories = () =>{
+export const Categories = ({navigation}) =>{
 
 
     return (
@@ -12,7 +12,7 @@ export const Categories = () =>{
             <FlatList
                 data={categories}
                 keyExtractor={(key) => key}
-                renderItem={({item}) => <CategoryItem item={item}/>}
+                renderItem={({item}) => <CategoryItem item={item} navigation={navigation}/>}
             />
         </View>
     )

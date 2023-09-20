@@ -1,20 +1,33 @@
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { HomeScreen } from './src/screens/HomeScreen';
-import { View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import Header from "./src/components/Header";
 import { Categories } from "./src/components/Categories";
 import Search from "./src/components/Search";
 import Products from "./src/screens/Products";
+import { NavigationContainer } from "@react-navigation/native";
+import { loadAsync, useFonts } from "expo-font";
+import { ProductDetail } from "./src/screens/ProductDetail";
+import { StackNavigation } from "./navigation/StackNavigation";
+import LoadingComponent from "./src/components/LoadingComponent";
 
 export default function App() {
-  return (
-    <>
 
-      {/* <HomeScreen /> */}
-      {/* <Search /> */}
-       <Products category='laptops' /> 
-    </>
+  const [fontsLoaded] = useFonts({
+    'Chakra': require('./assets/fonts/ChakraPetch-Light.ttf'),
+  });
+
+
+  if (!fontsLoaded) {
+    return <LoadingComponent />;
+  }
+
+  return (
+
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
 
   );
 }
