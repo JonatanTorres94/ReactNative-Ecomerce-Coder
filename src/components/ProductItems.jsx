@@ -4,7 +4,7 @@ import { colors } from '../themes/colors'
 
 const ProductItems = ({ item, navigation }) => {
 
-    console.log(item)
+    
 
     return (    
         <View style={styles.container}> 

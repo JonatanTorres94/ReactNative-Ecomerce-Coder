@@ -7,6 +7,8 @@ import { colors } from '../themes/colors';
 export const ProductDetail = ({ route }) => {
     const { product } = route.params;
 
+
+
     return (
         <ScrollView style={styles.container}>
             <Header title='Product Details' />

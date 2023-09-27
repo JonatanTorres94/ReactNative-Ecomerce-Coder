@@ -11,6 +11,9 @@ import { loadAsync, useFonts } from "expo-font";
 import { ProductDetail } from "./src/screens/ProductDetail";
 import { StackNavigation } from "./navigation/StackNavigation";
 import LoadingComponent from "./src/components/LoadingComponent";
+import { BottomTabsNavigation } from "./navigation/BottomTabsNavigation";
+import { Provider } from "react-redux";
+import { store } from "./src/redux/Store";
 
 export default function App() {
 
@@ -24,11 +27,12 @@ export default function App() {
   }
 
   return (
-
-    <NavigationContainer>
-      <StackNavigation />
-    </NavigationContainer>
-
+    <Provider store={store}>
+      <NavigationContainer>
+        {/* <StackNavigation /> */}
+        <BottomTabsNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 }
 

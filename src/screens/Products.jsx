@@ -2,8 +2,8 @@ import { View, Text, FlatList } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import Search from '../components/Search'
 import Header from '../components/Header'
-import { products } from '../data/products'
 import ProductItems from '../components/ProductItems'
+import {useSelector} from 'react-redux'
 
 const Products = ({ route, navigation}) => {
 
@@ -13,7 +13,9 @@ const Products = ({ route, navigation}) => {
 
     const {item} = route.params
 
-    console.log(item)
+    const products = useSelector((state) => state.homeSlice.allProducts)
+    
+
 
 
     useEffect(() => {
