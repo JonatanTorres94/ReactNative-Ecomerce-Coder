@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { categories } from "../../data/categories"
-import { products } from "../../data/products";
 
 const homeSlice = createSlice({
 
     name: 'home',
     initialState: {
-        allCategories: categories,
-        allProducts: products,
+        allCategories: '',
+        allProducts: '',
         categorySelected: '',
         productSelected: {}
     },
@@ -18,7 +16,7 @@ const homeSlice = createSlice({
         },
 
         setProductSelected: (state, action) =>{
-            state.productSelected === action.payload
+            state.productSelected = action.payload
         }
     }
 })

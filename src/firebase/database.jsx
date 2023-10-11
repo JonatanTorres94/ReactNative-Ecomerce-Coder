@@ -1,0 +1,1 @@
+export const base_url = 'https://jonatantorrescoder-default-rtdb.firebaseio.com/'

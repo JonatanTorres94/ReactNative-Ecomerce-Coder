@@ -14,6 +14,8 @@ import LoadingComponent from "./src/components/LoadingComponent";
 import { BottomTabsNavigation } from "./navigation/BottomTabsNavigation";
 import { Provider } from "react-redux";
 import { store } from "./src/redux/Store";
+import { LoginNavigation } from "./navigation/LoginNavigation";
+import { MainNav } from "./navigation/MainNav";
 
 export default function App() {
 
@@ -28,10 +30,11 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
+     
         {/* <StackNavigation /> */}
-        <BottomTabsNavigation />
-      </NavigationContainer>
+        {/* <BottomTabsNavigation /> */}
+        <MainNav/>
+      
     </Provider>
   );
 }

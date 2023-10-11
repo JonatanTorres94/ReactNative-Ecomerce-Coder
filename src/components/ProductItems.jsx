@@ -1,8 +1,18 @@
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { colors } from '../themes/colors'
+import {useDispatch} from 'react-redux'
 
 const ProductItems = ({ item, navigation }) => {
+
+    const dispatch = useDispatch();
+
+    const onHandleProduct = () =>{
+      dispatch(setProductSelected(item))
+      navigation.navigate('Products', { item })
+    }
+
+    
 
     
 
